@@ -12,6 +12,12 @@ doesKeyExist(obj1, 'name'); // => false
 
 function doesKeyExist(obj, key) {
   // Your code here
+  let keys = Object.keys(obj);
+
+  if(keys.includes(key)){
+    return true;
+  }
+  return false;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

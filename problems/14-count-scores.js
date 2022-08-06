@@ -29,7 +29,24 @@ console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 
 function countScores(people) {
   // Your code here
+  let scoresObj = {};
+  people.forEach(function(obj){
+    let name = obj.name;
+    let score = scoreSum(people, name);
+    scoresObj[name] = score;
+  })
+
+  return scoresObj;
 }
 
+let scoreSum = function(arr, Name){
+  let sum = 0;
+  arr.forEach(function(obj){
+    if(obj.name === Name){
+      sum += obj["score"];
+    }
+  })
+  return sum;
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = countScores;

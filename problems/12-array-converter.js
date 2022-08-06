@@ -13,7 +13,23 @@ console.log(arrayConverter(["apple", "banana", "potato", "banana"])); // => {app
 
 function arrayConverter(array) {
   // Your code here
+  let obj = {};
+  array.forEach(function(element){
+    let value = elementCounter(array, element);
+    obj[element] = value;
+  })
+  return obj;
 }
+/* ******************************************************************** */
 
+// This function takes in an array and a word as arguments and returns the count of that
+// word in the array. (it does not work with numbers that have leading zeros, so it's useful when working with an array of strings only).
+
+let elementCounter = function(arr, Word){
+  let duplicates = arr.filter(function(word){
+   return Word === word;
+  })
+  return duplicates.length;
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = arrayConverter;

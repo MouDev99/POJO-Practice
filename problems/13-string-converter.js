@@ -13,7 +13,22 @@ console.log(stringConverter("raccoon")); // => {r: 1, a: 1, c: 2, o: 2, n: 1}
 
 function stringConverter(string) {
   // Your code here
+  let obj = {};
+  string.split("").forEach(function(char){
+    let value = charCounter(string, char);
+    obj[char] = value;
+  })
+  return obj;
 }
 
+
+
+let charCounter = function(word, Char){
+  let chars = word.split("");
+  let duplicates = chars.filter(function(char){
+   return Char === char;
+  })
+  return duplicates.length;
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = stringConverter;
